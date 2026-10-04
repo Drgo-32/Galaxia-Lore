@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+  GALAXIA MORADA - página de regalo con galaxia 3D, mensajes y música
+  Usa HTML, CSS y JavaScript simples (no hay que instalar nada). Para verla bien ábrela desde un servidor
+  (GitHub Pages o "python -m http.server"), porque YouTube bloquea su reproductor si se abre el archivo directo.
+
+  ARCHIVOS
+  - index.html        Esta página: estructura, título, pantalla de inicio y botón de silencio. Carga todo lo demás.
+  - css/styles.css    Colores, fuentes, tamaños, animación de la pantalla de inicio y del título.
+  - js/config.js      TODO LO QUE SE PERSONALIZA: nombre (DE), título (TITULO), lista de mensajes (FRASES),
+                      cuántas veces se repite cada uno (REPETIR), iconitos (ICONOS) y música
+                      (VIDEO_IDS, INICIO, DURACION, VOLUMEN, AUDIO_LOCAL, DEPURAR).
+  - js/galaxy.js      Canvas, estrellas y anillo en 3D, agujero negro y control de la cámara (arrastrar y rueda).
+  - js/messages.js    Reparte los mensajes en el espacio y dibuja cada uno una sola vez como imagen.
+  - js/render.js      El ciclo que dibuja cada cuadro: gira las partículas, ordena y pinta todo.
+  - js/music.js       Música: archivo propio (assets/musica.mp3); si no existe, el video de YouTube (puede haber varios por si uno no se deja incrustar); si todo falla, un beat de rap.
+  - assets/           Carpeta para el archivo musica.mp3 (opcional).
+  - README.md         Pasos para publicarla en GitHub Pages.
+
+  ORDEN DE CARGA (importante): config.js, galaxy.js, messages.js, render.js, music.js. Los archivos comparten variables.
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Una galaxia para ti 💜</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="title">Para ti 💜</div>
+<div id="hint">arrastra para girar y descubrir los mensajes</div>
+<div id="start"><div class="e">💜</div><div>Hice esto para ti. Toca para entrar</div><small>sube el volumen 🎧</small></div>
+<button id="mute">🔊</button>
+<div id="yt" style="position:fixed;right:0;bottom:0;width:200px;height:200px;opacity:.01;pointer-events:none;z-index:-1"></div>
+<script src="js/config.js"></script>
+<script src="js/galaxy.js"></script>
+<script src="js/messages.js"></script>
+<script src="js/render.js"></script>
+<script src="js/music.js"></script>
+</body>
+</html>

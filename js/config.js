@@ -1,7 +1,7 @@
 const DE = "Diego";
-const TITULO = "Para ti 💜";
+const TITULO = "💜 Para ti Lore 💜";
 const FRASES = [
-  "Hice esta galaxia para ti 💜",
+  "💜 Hice esta galaxia para ti 💜",
   "Me encanta tu estilo, tiene algo que siempre me llama la atención.",
   "No sé cómo lo haces, pero siempre te ves hermosa.",
   "Me encanta esa forma tan tuya de ser.",
@@ -14,7 +14,7 @@ const FRASES = [
   "Hay algo en ti que siempre consigue llamar mi atención.",
   "Tu estilo es de esas cosas que nunca pasan desapercibidas.",
   "Me encanta verte feliz, aunque sea a través de una historia.",
-  "No sé qué es exactamente, pero tienes algo que me encanta.",
+  "No sé qué es exactamente, pero tienes algo especial.",
   "Cada vez que apareces por ahí, siempre termino sonriendo.",
   "Me encanta esa versión de ti que muestras sin siquiera intentarlo.",
   "Hay días en los que simplemente te ves increíble.",

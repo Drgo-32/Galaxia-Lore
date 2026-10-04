@@ -40,10 +40,15 @@ if(AUDIO_LOCAL){
   aLocal.src=AUDIO_LOCAL;
 }
 
+const yf=document.getElementById('yt');
+(function(){
+  const q=new URLSearchParams({enablejsapi:1,playsinline:1,controls:0,disablekb:1,fs:0,rel:0,modestbranding:1,start:INICIO});
+  if(location.protocol.indexOf('http')===0)q.set('origin',location.origin);
+  yf.src='https://www.youtube.com/embed/'+VIDEO_IDS[0]+'?'+q.toString();
+})();
+
 window.onYouTubeIframeAPIReady=function(){
-  const pv={playsinline:1,controls:0,disablekb:1,fs:0,modestbranding:1,rel:0,start:INICIO,enablejsapi:1};
-  if(location.protocol.indexOf('http')===0)pv.origin=location.origin;
-  yt=new YT.Player('yt',{width:200,height:200,videoId:VIDEO_IDS[0],playerVars:pv,events:{
+  yt=new YT.Player('yt',{events:{
     onReady:()=>{
       ytListo=true;
       if(started&&!usandoLocal&&!usandoYT&&!ytFallo){pararBeat();iniciarYT()}
